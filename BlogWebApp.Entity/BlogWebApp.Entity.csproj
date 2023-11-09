@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlogWebApp.Core\BlogWebApp.Core.csproj" />
+  </ItemGroup>
+
 </Project>

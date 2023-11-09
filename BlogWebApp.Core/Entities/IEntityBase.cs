@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlogWebApp.Core.Entities
 {
-    public class EntityBase
+    public interface IEntityBase
     {
-
     }
 }
