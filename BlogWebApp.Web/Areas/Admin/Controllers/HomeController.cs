@@ -1,13 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BlogWebApp.Service.Services.Abstraction;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWebApp.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IArticleService articleService;
+
+        public HomeController(IArticleService articleService)
         {
-            return View();
+            this.articleService = articleService;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var articles = await articleService.GetAllArticleAsync();
+            return View(articles);
         }
     }
 }
