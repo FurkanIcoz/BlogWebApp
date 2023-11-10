@@ -4,6 +4,7 @@ using BlogWebApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogWebApp.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231109235505_DataSeedTest")]
+    partial class DataSeedTest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,11 +82,11 @@ namespace BlogWebApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4276796c-10ff-4544-b2f7-819d5bcc46fc"),
+                            Id = new Guid("82456e2c-06df-489a-88db-6b6aec5722de"),
                             CategoryId = new Guid("0ebc1653-2b5f-4c28-b8fb-8de71c7d71cf"),
                             Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt, enim eu facilisis condimentum, purus massa tristique felis, non congue nibh tortor at purus. Donec in viverra elit. Mauris eget velit non lacus porta mollis non id quam. Proin condimentum fermentum ornare. In lobortis tempus augue, a accumsan lectus molestie eu. Nulla facilisi. Nulla at pellentesque ante. Sed nec diam quis est tempor congue ac varius ante. Suspendisse ac massa vel quam ultricies suscipit. Quisque mi massa, vestibulum sed ultrices vel, varius consectetur lorem.",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2023, 11, 10, 3, 37, 44, 798, DateTimeKind.Local).AddTicks(2061),
+                            CreatedDate = new DateTime(2023, 11, 10, 2, 55, 5, 199, DateTimeKind.Local).AddTicks(223),
                             ImageId = new Guid("94054bb5-2fd2-4b91-bf53-6077f0684025"),
                             IsDeleted = false,
                             Title = "Title",
@@ -91,11 +94,11 @@ namespace BlogWebApp.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("880e2210-a262-45ad-992d-16ccc1708736"),
+                            Id = new Guid("5fbfade0-a0dd-47e9-bf7c-3c3f8c483af6"),
                             CategoryId = new Guid("82212532-f3e7-4e53-8d1a-8f8752dc054d"),
                             Content = "Nullam sed sapien turpis. Pellentesque quis neque nunc. Vivamus cursus et neque at posuere. Vivamus iaculis congue ipsum in commodo. Mauris quis ante condimentum, vulputate sem nec, facilisis velit. Fusce ligula nibh, finibus non elit porta, venenatis dictum massa. Aliquam vel quam at orci placerat tempor quis quis libero. Donec nec lacus purus.",
                             CreatedBy = "Admin",
-                            CreatedDate = new DateTime(2023, 11, 10, 3, 37, 44, 798, DateTimeKind.Local).AddTicks(2084),
+                            CreatedDate = new DateTime(2023, 11, 10, 2, 55, 5, 199, DateTimeKind.Local).AddTicks(254),
                             ImageId = new Guid("437587af-85d1-4a98-8467-35a878cceed1"),
                             IsDeleted = false,
                             Title = "Title",
@@ -144,7 +147,7 @@ namespace BlogWebApp.Data.Migrations
                         {
                             Id = new Guid("0ebc1653-2b5f-4c28-b8fb-8de71c7d71cf"),
                             CreatedBy = "AdminTest",
-                            CreatedDate = new DateTime(2023, 11, 10, 3, 37, 44, 798, DateTimeKind.Local).AddTicks(2237),
+                            CreatedDate = new DateTime(2023, 11, 10, 2, 55, 5, 199, DateTimeKind.Local).AddTicks(412),
                             IsDeleted = false,
                             Name = "C# ASP.NET CORE MVC"
                         },
@@ -152,7 +155,7 @@ namespace BlogWebApp.Data.Migrations
                         {
                             Id = new Guid("82212532-f3e7-4e53-8d1a-8f8752dc054d"),
                             CreatedBy = "TestAdmin",
-                            CreatedDate = new DateTime(2023, 11, 10, 3, 37, 44, 798, DateTimeKind.Local).AddTicks(2250),
+                            CreatedDate = new DateTime(2023, 11, 10, 2, 55, 5, 199, DateTimeKind.Local).AddTicks(414),
                             IsDeleted = false,
                             Name = "Java Spring Boot"
                         });
@@ -203,7 +206,7 @@ namespace BlogWebApp.Data.Migrations
                         {
                             Id = new Guid("94054bb5-2fd2-4b91-bf53-6077f0684025"),
                             CreatedBy = "AdminImageTest",
-                            CreatedDate = new DateTime(2023, 11, 10, 3, 37, 44, 798, DateTimeKind.Local).AddTicks(2325),
+                            CreatedDate = new DateTime(2023, 11, 10, 2, 55, 5, 199, DateTimeKind.Local).AddTicks(531),
                             FileName = "FileNameTest",
                             FileType = "Jpg",
                             IsDeleted = false
@@ -212,7 +215,7 @@ namespace BlogWebApp.Data.Migrations
                         {
                             Id = new Guid("437587af-85d1-4a98-8467-35a878cceed1"),
                             CreatedBy = "AdminTestImage",
-                            CreatedDate = new DateTime(2023, 11, 10, 3, 37, 44, 798, DateTimeKind.Local).AddTicks(2328),
+                            CreatedDate = new DateTime(2023, 11, 10, 2, 55, 5, 199, DateTimeKind.Local).AddTicks(535),
                             FileName = "TestFileName",
                             FileType = "Png",
                             IsDeleted = false

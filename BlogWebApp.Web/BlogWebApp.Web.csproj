@@ -16,6 +16,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlogWebApp.Data\BlogWebApp.Data.csproj" />
+    <ProjectReference Include="..\BlogWebApp.Service\BlogWebApp.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
   </ItemGroup>
 
 </Project>

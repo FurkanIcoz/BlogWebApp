@@ -1,14 +1,14 @@
 using BlogWebApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
-
+using BlogWebApp.Data.Extensions;
+using BlogWebApp.Service.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
+builder.Services.LoadDataLayerExtension(builder.Configuration);
+builder.Services.LoadServiceLayerExtension();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,8 +26,13 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapAreaControllerRoute(
+        name: "Admin",
+        areaName: "Admin",
+        pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
+        );
+    endpoints.MapDefaultControllerRoute();
+});
 app.Run();
