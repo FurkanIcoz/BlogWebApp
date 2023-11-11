@@ -1,5 +1,6 @@
 ﻿using BlogWebApp.Data.UnitOfWorks;
 using BlogWebApp.Entity.Entities;
+using BlogWebApp.Entity.ViewModels.Article;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace BlogWebApp.Service.Services.Abstraction
 {
     public interface IArticleService
     {
-        Task<List<Article>> GetAllArticleAsync();
+        Task<List<ArticleDto>> GetAllArticleAsync();
     }
 }
