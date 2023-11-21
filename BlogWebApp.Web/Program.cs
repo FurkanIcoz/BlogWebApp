@@ -39,7 +39,7 @@ builder.Services.ConfigureApplicationCookie(config =>
     config.ExpireTimeSpan = TimeSpan.FromDays(5);
     config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDenied");
 });
-
+ 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
